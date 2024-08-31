@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://220mv3fxpivd"]
+
+[ext_resource type="Texture2D" uid="uid://dsi61pbwm8xwx" path="res://icon.svg" id="1_2karb"]
+[ext_resource type="Shader" path="res://shaders_101/uniforms101.gdshader" id="1_qu184"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ll8iy"]
+shader = ExtResource("1_qu184")
+shader_parameter/SPEED = 7.562
+shader_parameter/SWAY = 20.0
+shader_parameter/SPRITE_COLOR1 = Color(1, 0.671457, 0.0725266, 1)
+
+[node name="fragments101" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ll8iy")
+position = Vector2(529, 338)
+texture = ExtResource("1_2karb")
