@@ -13,6 +13,7 @@ uniform float SWAY = 10;
 group_uniforms;
 
 uniform vec4 SPRITE_COLOR1: source_color;
+uniform vec4 SPRITE_COLOR2: source_color;
 
 
 void sway_top_side2side(inout vec2 vector){
@@ -44,9 +45,7 @@ void vertex() {
 
 void fragment() {
 	// Called for every pixel the material is visible on.
-	
-	COLOR = texture(TEXTURE, UV) * SPRITE_COLOR1;
-
+	COLOR = texture(TEXTURE, UV) * mix(SPRITE_COLOR1, SPRITE_COLOR2, (sin(TIME * SPEED) + 1.0) /2.0);
 }
 
 //void light() {
